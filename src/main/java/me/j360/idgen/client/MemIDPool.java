@@ -1,5 +1,6 @@
 package me.j360.idgen.client;
 
+import me.j360.idgen.IdGenService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -21,7 +22,7 @@ public class MemIDPool implements IDPool {
 
     private static final Logger Log = LoggerFactory.getLogger(MemIDPool.class);
 
-    private IDGenService globalIdGenerator;
+    private IdGenService globalIdGenerator;
 
     private ConcurrentLinkedQueue<String> freshIds;
 
@@ -44,7 +45,7 @@ public class MemIDPool implements IDPool {
      * @param configDomain coordinates needed by global idGenerator service
      * @param configKey coordinates needed by global idGenerator service
      */
-    public MemIDPool(String configDomain, String configKey, IDGenService generator){
+    public MemIDPool(String configDomain, String configKey, IdGenService generator){
         globalIdGenerator = generator;
         freshIds = new ConcurrentLinkedQueue<String>();
         lentIds = new ConcurrentHashSet<String>();
