@@ -64,7 +64,7 @@ public class MemIDPool implements IDPool {
             synchronized (this){
                 // in case of race condition, double check to prevent unnecessary invocation to idGenerator
                 if(freshIds.size() <= poolLowerBound){
-                    String rawIds = globalIdGenerator.getNextId(idConfigDomain, idConfigKey, allocCount);
+                    String rawIds = globalIdGenerator.getNextStringId(idConfigDomain+idConfigKey+allocCount);
                     List<String> newIds = Arrays.asList(rawIds.split(","));
 
                     Log.debug("fresh ID pool size({}) is running low, allocate new {} IDs: {}", freshIds.size(), allocCount, rawIds);
@@ -163,11 +163,11 @@ public class MemIDPool implements IDPool {
         this.lentPoolUpperBound = lentPoolUpperBound;
     }
 
-    public IDGenService getGlobalIdGenerator() {
+    public IdGenService getGlobalIdGenerator() {
         return globalIdGenerator;
     }
 
-    public void setGlobalIdGenerator(IDGenService idGenerator) {
+    public void setGlobalIdGenerator(IdGenService idGenerator) {
         this.globalIdGenerator = idGenerator;
     }
 

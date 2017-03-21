@@ -49,6 +49,7 @@ public class SequenceIdGenServiceJdbcTest {
 	private ApplicationContext applicationContext;
 
 	/**
+	 * 是用postgreSQL替代ORACAL数据库的CREATE SEQUENCE
 	 * initialize TestCase
 	 * 
 	 * @throws Exception

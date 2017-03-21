@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:config="http://www.anyframejava.org/schema/service"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
-	http://www.anyframejava.org/schema/service http://www.anyframejava.org/schema/service/anyframe-core-service-2.0.xsd">
-	<bean name="mixStrategyWithNullFix" class="org.anyframe.idgen.impl.strategy.MixStrategy">
+	">
+	<bean name="mixStrategyWithNullFix" class="me.j360.idgen.impl.strategy.MixStrategy">
 		<property name="maxCiphers" value="5"/>
 		<property name="paddingChar" value="*"/>
 	</bean>
 	
-	<bean name="Ids-TestGenerateTableIdWithNullFix" class="org.anyframe.idgen.impl.TableIdGenServiceImpl" destroy-method="destroy">
+	<bean name="Ids-TestGenerateTableIdWithNullFix" class="me.j360.idgen.impl.TableIdGenServiceImpl" destroy-method="destroy">
 		<property name="dataSource" ref="util_datasource"/>
 		<property name="strategy" ref="mixStrategyWithNullFix"/>
 		<property name="blockSize" value="1"/>
@@ -17,13 +16,13 @@
 		<property name="key" value="test"/>						
 	</bean>
 	
-	<bean name="mixStrategyWithPrefix" class="org.anyframe.idgen.impl.strategy.MixStrategy">
+	<bean name="mixStrategyWithPrefix" class="me.j360.idgen.impl.strategy.MixStrategy">
 		<property name="prefix" value="TEST-"/>
 		<property name="maxCiphers" value="5"/>
 		<property name="paddingChar" value="*"/>
 	</bean>
 	
-	<bean name="Ids-TestGenerateTableIdWithPrefix" class="org.anyframe.idgen.impl.TableIdGenServiceImpl" destroy-method="destroy">
+	<bean name="Ids-TestGenerateTableIdWithPrefix" class="me.j360.idgen.impl.TableIdGenServiceImpl" destroy-method="destroy">
 		<property name="dataSource" ref="util_datasource"/>
 		<property name="strategy" ref="mixStrategyWithPrefix"/>
 		<property name="blockSize" value="1"/>
@@ -31,13 +30,13 @@
 		<property name="key" value="test"/>						
 	</bean>
 	
-	<bean name="mixStrategyWithSuffix" class="org.anyframe.idgen.impl.strategy.MixStrategy">
+	<bean name="mixStrategyWithSuffix" class="me.j360.idgen.impl.strategy.MixStrategy">
 		<property name="suffix" value="-TEST"/>
 		<property name="maxCiphers" value="5"/>
 		<property name="paddingChar" value="*"/>
 	</bean>
 	
-	<bean name="Ids-TestGenerateTableIdWithSuffix" class="org.anyframe.idgen.impl.TableIdGenServiceImpl" destroy-method="destroy">
+	<bean name="Ids-TestGenerateTableIdWithSuffix" class="me.j360.idgen.impl.TableIdGenServiceImpl" destroy-method="destroy">
 		<property name="dataSource" ref="util_datasource"/>
 		<property name="strategy" ref="mixStrategyWithSuffix"/>
 		<property name="blockSize" value="1"/>
@@ -45,14 +44,14 @@
 		<property name="key" value="test"/>						
 	</bean>
 	
-	<bean name="mixStrategyWithFix" class="org.anyframe.idgen.impl.strategy.MixStrategy">
+	<bean name="mixStrategyWithFix" class="me.j360.idgen.impl.strategy.MixStrategy">
 		<property name="prefix" value="TE-"/>
 		<property name="suffix" value="-ST"/>
 		<property name="maxCiphers" value="5"/>
 		<property name="paddingChar" value="*"/>
 	</bean>
 	
-	<bean name="Ids-TestGenerateTableIdWithFix" class="org.anyframe.idgen.impl.TableIdGenServiceImpl" destroy-method="destroy">
+	<bean name="Ids-TestGenerateTableIdWithFix" class="me.j360.idgen.impl.TableIdGenServiceImpl" destroy-method="destroy">
 		<property name="dataSource" ref="util_datasource"/>
 		<property name="strategy" ref="mixStrategyWithFix"/>
 		<property name="blockSize" value="1"/>
@@ -60,7 +59,7 @@
 		<property name="key" value="test"/>						
 	</bean>
 	
-	<bean name="Ids-TestGenerateClassNameBasedTableIdWithClassName" class="org.anyframe.idgen.impl.TableIdGenServiceImpl" destroy-method="destroy">
+	<bean name="Ids-TestGenerateClassNameBasedTableIdWithClassName" class="me.j360.idgen.impl.TableIdGenServiceImpl" destroy-method="destroy">
 		<property name="dataSource" ref="util_datasource"/>
 		<property name="strategy" ref="classStrategy"/>
 		<property name="blockSize" value="1"/>
@@ -68,7 +67,7 @@
 		<property name="key" value="test"/>						
 	</bean>
 	
-	<bean name="Ids-TestGeneratePackageNameBasedTableIdWithClassName" class="org.anyframe.idgen.impl.TableIdGenServiceImpl" destroy-method="destroy">
+	<bean name="Ids-TestGeneratePackageNameBasedTableIdWithClassName" class="me.j360.idgen.impl.TableIdGenServiceImpl" destroy-method="destroy">
 		<property name="dataSource" ref="util_datasource"/>
 		<property name="strategy" ref="packageNameStrategy"/>
 		<property name="blockSize" value="1"/>
@@ -76,7 +75,7 @@
 		<property name="key" value="test"/>						
 	</bean>
 	
-	<bean name="Ids-TestGeneratePackageBasedTableIdWithClassName" class="org.anyframe.idgen.impl.TableIdGenServiceImpl" destroy-method="destroy">
+	<bean name="Ids-TestGeneratePackageBasedTableIdWithClassName" class="me.j360.idgen.impl.TableIdGenServiceImpl" destroy-method="destroy">
 		<property name="dataSource" ref="util_datasource"/>
 		<property name="strategy" ref="packageStrategy"/>
 		<property name="blockSize" value="1"/>
@@ -84,7 +83,7 @@
 		<property name="key" value="test"/>						
 	</bean>
 	
-	<bean name="Ids-TestGeneratePackageBasedTableIdWithSuffixAndClassName" class="org.anyframe.idgen.impl.TableIdGenServiceImpl" destroy-method="destroy">
+	<bean name="Ids-TestGeneratePackageBasedTableIdWithSuffixAndClassName" class="me.j360.idgen.impl.TableIdGenServiceImpl" destroy-method="destroy">
 		<property name="dataSource" ref="util_datasource"/>
 		<property name="strategy" ref="packageSuffixStrategy"/>
 		<property name="blockSize" value="1"/>
@@ -92,35 +91,35 @@
 		<property name="key" value="test"/>						
 	</bean>
 	
-	<bean name="Ids-TestWithMixStrategyMaxCiphers" class="org.anyframe.idgen.impl.TableIdGenServiceImpl" destroy-method="destroy">
+	<bean name="Ids-TestWithMixStrategyMaxCiphers" class="me.j360.idgen.impl.TableIdGenServiceImpl" destroy-method="destroy">
 		<property name="dataSource" ref="util_datasource"/>
 		<property name="strategy" ref="ignoreMaxCiphersStrategy"/>
 		<property name="blockSize" value="1"/>
 		<property name="table" value="myIdstest"/>	
 	</bean>				
 	
-	<bean name="Ids-TestWithClassNameStrategyMaxCiphers" class="org.anyframe.idgen.impl.TableIdGenServiceImpl" destroy-method="destroy">
+	<bean name="Ids-TestWithClassNameStrategyMaxCiphers" class="me.j360.idgen.impl.TableIdGenServiceImpl" destroy-method="destroy">
 		<property name="dataSource" ref="util_datasource"/>
 		<property name="strategy" ref="ignoreMaxCiphersClassNameStrategy"/>
 		<property name="blockSize" value="1"/>
 		<property name="table" value="myIdstest"/>	
 	</bean>				
 	
-	<bean name="Ids-TestWithPackageNameStrategyMaxCiphers" class="org.anyframe.idgen.impl.TableIdGenServiceImpl" destroy-method="destroy">
+	<bean name="Ids-TestWithPackageNameStrategyMaxCiphers" class="me.j360.idgen.impl.TableIdGenServiceImpl" destroy-method="destroy">
 		<property name="dataSource" ref="util_datasource"/>
 		<property name="strategy" ref="ignoreMaxCiphersPackageNameStrategy"/>
 		<property name="blockSize" value="1"/>
 		<property name="table" value="myIdstest"/>	
 	</bean>				
 	
-	<bean name="Ids-TestWithPackageStrategyMaxCiphers" class="org.anyframe.idgen.impl.TableIdGenServiceImpl" destroy-method="destroy">
+	<bean name="Ids-TestWithPackageStrategyMaxCiphers" class="me.j360.idgen.impl.TableIdGenServiceImpl" destroy-method="destroy">
 		<property name="dataSource" ref="util_datasource"/>
 		<property name="strategy" ref="ignoreMaxCiphersPackageStrategy"/>
 		<property name="blockSize" value="1"/>
 		<property name="table" value="myIdstest"/>
 	</bean>				
 	
-	<bean name="ignoreMaxCiphersPackageStrategy" class="org.anyframe.idgen.impl.strategy.PackageStrategy">
+	<bean name="ignoreMaxCiphersPackageStrategy" class="me.j360.idgen.impl.strategy.PackageStrategy">
 		<property name="packageIds">
 			<props>
 				<prop key="org.anyframe.idgen">TB</prop>
@@ -133,7 +132,7 @@
 		<property name="separator" value="-"/>
 	</bean>
 	
-	<bean name="ignoreMaxCiphersPackageNameStrategy" class="org.anyframe.idgen.impl.strategy.PackageNameStrategy">
+	<bean name="ignoreMaxCiphersPackageNameStrategy" class="me.j360.idgen.impl.strategy.PackageNameStrategy">
 		<property name="prefix" value="true"/>
 		<property name="maxCiphers" value="1"/>
 		<property name="ignoreMaxCiphers" value="false"/>
@@ -141,7 +140,7 @@
 		<property name="separator" value="-"/>
 	</bean>
 	
-	<bean name="ignoreMaxCiphersClassNameStrategy" class="org.anyframe.idgen.impl.strategy.ClassNameStrategy">
+	<bean name="ignoreMaxCiphersClassNameStrategy" class="me.j360.idgen.impl.strategy.ClassNameStrategy">
 		<property name="prefix" value="true"/>
 		<property name="maxCiphers" value="1"/>
 		<property name="ignoreMaxCiphers" value="false"/>
@@ -149,31 +148,31 @@
 		<property name="separator" value="-"/>
 	</bean>
 	
-	<bean name="ignoreMaxCiphersStrategy" class="org.anyframe.idgen.impl.strategy.MixStrategy">
+	<bean name="ignoreMaxCiphersStrategy" class="me.j360.idgen.impl.strategy.MixStrategy">
 		<property name="prefix" value="TEST-"/>
 		<property name="maxCiphers" value="1"/>
 		<property name="ignoreMaxCiphers" value="false"/>
 		<property name="paddingChar" value="*"/>
 	</bean>
 	
-	<bean name="classStrategy" class="org.anyframe.idgen.impl.strategy.ClassNameStrategy">
+	<bean name="classStrategy" class="me.j360.idgen.impl.strategy.ClassNameStrategy">
 		<property name="prefix" value="true"/>
 		<property name="maxCiphers" value="5"/>
 		<property name="paddingChar" value="*"/>
 		<property name="separator" value="-"/>
 	</bean>
 	
-	<bean name="packageNameStrategy" class="org.anyframe.idgen.impl.strategy.PackageNameStrategy">
+	<bean name="packageNameStrategy" class="me.j360.idgen.impl.strategy.PackageNameStrategy">
 		<property name="prefix" value="false"/>
 		<property name="maxCiphers" value="5"/>
 		<property name="paddingChar" value="*"/>
 		<property name="separator" value="-"/>
 	</bean>
 	
-	<bean id="packageStrategy" class="org.anyframe.idgen.impl.strategy.PackageStrategy">
+	<bean id="packageStrategy" class="me.j360.idgen.impl.strategy.PackageStrategy">
 		<property name="packageIds">
 			<props>
-				<prop key="org.anyframe.idgen.impl">TB</prop>
+				<prop key="me.j360.idgen.impl">TB</prop>
 				<prop key="org.anyframe.idgen">TBP</prop>
 			</props>
 		</property>
@@ -183,7 +182,7 @@
 		<property name="separator" value="-"/>
 	</bean>
 	
-	<bean id="packageSuffixStrategy" class="org.anyframe.idgen.impl.strategy.PackageStrategy">
+	<bean id="packageSuffixStrategy" class="me.j360.idgen.impl.strategy.PackageStrategy">
 		<property name="packageIds">
 			<props>
 				<prop key="org.anyframe.idgen">TBP</prop>
@@ -195,13 +194,13 @@
 		<property name="separator" value="-"/>
 	</bean>
 	
-	<bean name="mixStrategyWithSmallColumnSizeThanNextId" class="org.anyframe.idgen.impl.strategy.MixStrategy">
+	<bean name="mixStrategyWithSmallColumnSizeThanNextId" class="me.j360.idgen.impl.strategy.MixStrategy">
 		<property name="prefix" value="TEST-"/>
 		<property name="maxCiphers" value="5"/>
 		<property name="paddingChar" value="*"/>
 	</bean>
 	
-	<bean name="Ids-TestGenerateTableIdWithColumnSizeSmallerThanNextId" class="org.anyframe.idgen.impl.TableIdGenServiceImpl" destroy-method="destroy">
+	<bean name="Ids-TestGenerateTableIdWithColumnSizeSmallerThanNextId" class="me.j360.idgen.impl.TableIdGenServiceImpl" destroy-method="destroy">
 		<property name="dataSource" ref="util_datasource"/>
 		<property name="strategy" ref="mixStrategyWithSmallColumnSizeThanNextId"/>
 		<property name="blockSize" value="1"/>

@@ -15,8 +15,9 @@
  */
 package me.j360.idgen.impl.strategy;
 
-import org.anyframe.idgen.IdGenStrategy;
-import org.anyframe.util.StringUtil;
+
+import me.j360.idgen.IdGenStrategy;
+import org.apache.commons.lang3.StringUtils;
 
 /**
  * MixPrefix is a kind of id generation strategy. MixPrefix assembles prefix,
@@ -57,7 +58,7 @@ public class MixPrefixStrategy implements IdGenStrategy {
 	 * @return assembled id
 	 */
 	public String makeId(String originalId, Class<?> clazz) {
-		return prefix + StringUtil.leftPad(originalId, maxCiphers, paddingChar );
+		return prefix + StringUtils.leftPad(originalId, maxCiphers, paddingChar );
 	}
 
 	/**
