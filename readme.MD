@@ -13,7 +13,7 @@ ID生成工具,提供多种ID生成策略组合的ID生成工具
 
 ## 存储依赖
 
-1. Mysql
+1. PostgreSQL(默认)/Oracle
 2. Redis
 
 ## 参考
