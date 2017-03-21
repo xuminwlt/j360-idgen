@@ -6,19 +6,19 @@
 
 	<bean name="Ids-TestSequenceNonExistingSequenceName" class="me.j360.idgen.impl.SequenceIdGenServiceImpl" destroy-method="destroy">
 		<property name="dataSource" ref="util_datasource"/>
-		<property name="query" value="SELECT nonexisting-sequence.NEXTVAL FROM DUAL"/>
+		<property name="query" value="select nextval('ids')"/>
 	</bean>
 	<bean name="Ids-TestSequenceSimpleRequestIdsSize1" class="me.j360.idgen.impl.SequenceIdGenServiceImpl" destroy-method="destroy">
 		<property name="dataSource" ref="util_datasource"/>
-		<property name="query" value="SELECT idstest.NEXTVAL FROM DUAL"/>		
+		<property name="query" value="select nextval('ids')"/>
 	</bean>
 	<bean name="Ids-TestSequenceMaxByteIds" class="me.j360.idgen.impl.SequenceIdGenServiceImpl" destroy-method="destroy">
 		<property name="dataSource" ref="util_datasource"/>
-		<property name="query" value="SELECT idstest.NEXTVAL FROM DUAL"/>		
+		<property name="query" value="select nextval('ids')"/>
 	</bean>
 	<bean name="Ids-TestSequenceMaxBigDecimalIds" class="me.j360.idgen.impl.SequenceIdGenServiceImpl" destroy-method="destroy">
 		<property name="dataSource" ref="util_datasource"/>
 		<property name="useBigDecimals" value="true"/>
-		<property name="query" value="SELECT idstest.NEXTVAL FROM DUAL"/>		
+		<property name="query" value="select nextval('ids')"/>
 	</bean>	
 </beans>	

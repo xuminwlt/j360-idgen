@@ -132,7 +132,8 @@ public class SequenceIdGenServiceJdbcTest {
 				.getBean("Ids-TestSequenceNonExistingSequenceName");
 		try {
 			// 1. get next integer id
-			idGenerator.getNextIntegerId();
+			Integer i = idGenerator.getNextIntegerId();
+			System.out.println(i);
 			fail("Should not have gotten an id");
 		} catch (Exception e) {
 			assertTrue(e instanceof IdCreationException);
@@ -155,9 +156,10 @@ public class SequenceIdGenServiceJdbcTest {
 		// 1. Initialize the counter in the database.
 		initializeNextLongId("idstest", 1);
 
-		// 2. get next integer id until 99
+		// 2. get next integer id until 99d
 		for (int i = 1; i <= testCount; i++) {
 			int id = idGenerator.getNextIntegerId();
+			System.out.println(id);
 			assertEquals("The returned id was not what was expected.", i, id);
 		}
 
