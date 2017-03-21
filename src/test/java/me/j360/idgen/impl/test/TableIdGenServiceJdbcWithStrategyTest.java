@@ -15,7 +15,8 @@
  */
 package me.j360.idgen.impl.test;
 
-import org.anyframe.exception.IdCreationException;
+import me.j360.idgen.exception.IdCreationException;
+import me.j360.idgen.impl.TableIdGenServiceImpl;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

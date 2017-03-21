@@ -15,6 +15,7 @@
  */
 package me.j360.idgen.impl.test;
 
+import me.j360.idgen.impl.SequenceIdGenServiceImpl;
 import org.easymock.EasyMock;
 import org.junit.Test;
 import org.junit.runner.RunWith;

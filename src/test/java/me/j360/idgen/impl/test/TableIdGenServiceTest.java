@@ -15,6 +15,7 @@
  */
 package me.j360.idgen.impl.test;
 
+import me.j360.idgen.impl.TableIdGenServiceImpl;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.context.ApplicationContext;

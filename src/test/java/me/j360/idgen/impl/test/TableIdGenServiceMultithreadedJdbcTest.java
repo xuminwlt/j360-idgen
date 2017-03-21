@@ -15,7 +15,7 @@
  */
 package me.j360.idgen.impl.test;
 
-import org.anyframe.idgen.IdGenService;
+import me.j360.idgen.IdGenService;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

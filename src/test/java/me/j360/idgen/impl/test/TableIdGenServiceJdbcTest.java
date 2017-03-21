@@ -15,9 +15,10 @@
  */
 package me.j360.idgen.impl.test;
 
-import org.anyframe.exception.IdCreationException;
-import org.anyframe.idgen.IdGenService;
-import org.anyframe.util.DateUtil;
+import me.j360.idgen.IdGenService;
+import me.j360.idgen.exception.IdCreationException;
+import me.j360.idgen.impl.TableIdGenServiceImpl;
+import org.apache.commons.lang3.time.DateFormatUtils;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -33,6 +34,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Date;
 
 import static org.junit.Assert.*;
 
@@ -585,7 +587,7 @@ public class TableIdGenServiceJdbcTest {
 		// 2. generate id with stragety (pattern :
 		// 'yyyyMMdd', separator : '', cipers : 5, fillChar :
 		// '0')
-		String currentTime = DateUtil.getCurrentDateTime("yyyyMMdd");
+		String currentTime = DateFormatUtils.format(new Date(),"yyyyMMdd");
 		
 
 		for (int i = 0; i < 5; i++) {
@@ -601,7 +603,7 @@ public class TableIdGenServiceJdbcTest {
 		IdGenService idGenerator2 = (IdGenService) applicationContext
 				.getBean("Ids-TestWithPatternedTimestampStrategy");
 
-		currentTime = DateUtil.getCurrentDateTime("yyyy-MM-dd HH");
+		currentTime = DateFormatUtils.format(new Date(),"yyyy-MM-dd HH");
 		// 3. generate id with stragety (pattern :
 		// 'yyyyMMddHHmmssSSS', separator : '-', cipers : 5, fillChar :
 		// '*')
@@ -632,7 +634,7 @@ public class TableIdGenServiceJdbcTest {
 		// 1. generate id with stragety (pattern :
 		// 'yyyyMMdd', separator : '', cipers : 5, fillChar :
 		// '0')
-		String currentTime = DateUtil.getCurrentDateTime("yyyyMMdd");
+		String currentTime = DateFormatUtils.format(new Date(),"yyyyMMdd");
 
 		for (int i = 0; i < 5; i++) {
 			assertEquals(currentTime + "0000" + (i + 1), idGenerator1

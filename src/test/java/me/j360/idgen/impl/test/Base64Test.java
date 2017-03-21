@@ -16,7 +16,7 @@
 package me.j360.idgen.impl.test;
 
 import junit.framework.TestCase;
-import org.anyframe.idgen.impl.Base64;
+import me.j360.idgen.impl.Base64;
 
 /**
  * For testing functions what Base64 supports, there are some test scenarios in

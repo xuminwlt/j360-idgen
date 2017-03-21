@@ -15,7 +15,7 @@
  */
 package me.j360.idgen.impl.test;
 
-import org.anyframe.idgen.IdGenService;
+import me.j360.idgen.IdGenService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.context.ApplicationContext;
